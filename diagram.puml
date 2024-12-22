@@ -1,0 +1,46 @@
+@startuml
+
+
+package "Client side" {
+  [Browser]
+  [Mobile App]
+}
+
+package "Load Balancer" {
+  [API Gateway]
+}
+
+package "Stateless Service" {
+  [API instance 1]
+  [API instance 2]
+  [...]
+}
+
+package "Monitoring" {
+  [Prometheus service]
+  [Grafana service]
+}
+
+
+database "Sql" {
+  folder "quiz db" {
+    [quiz session]
+    [leaderboard]
+    [answer log]
+  }
+}
+
+
+[Browser] -down-> [API Gateway]
+[Mobile App] -down-> [API Gateway]
+[Load Balancer] -down-> [API instance 1]
+[Prometheus service] -up-> [Load Balancer]
+[Prometheus service] -down-> [Stateless Service]
+[Prometheus service] -up-> [Grafana service]
+[Load Balancer] -down-> [API instance 2]
+[Load Balancer] -down-> [...]
+[API instance 1] --> [Sql]
+[API instance 2] --> [Sql]
+[...] --> [Sql]
+
+@enduml
