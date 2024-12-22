@@ -5,7 +5,6 @@
 1. **System Design Document**:
  - **Architecture Diagram**: 
 ![Architecture Diagram](image.png)
-  Create an architecture diagram illustrating how different components of the system interact. This should include all components required for the feature, including the server, client applications, database, and any external services.
 
 - **Component Description**: 
     - Client side: include Browser or Mobile app interact with system throw API gateway.
