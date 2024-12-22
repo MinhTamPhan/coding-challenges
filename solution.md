@@ -3,7 +3,8 @@
 ### Part 1: System Design
 
 1. **System Design Document**:
- - **Architecture Diagram**: 
+ - **Architecture Diagram**:
+ 
 ![Architecture Diagram](image.png)
 
 - **Component Description**: 
